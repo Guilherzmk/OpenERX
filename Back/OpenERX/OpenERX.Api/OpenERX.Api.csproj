@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.19" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.8" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.31.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.31.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenERX.Commons\OpenERX.Commons.csproj" />
+    <ProjectReference Include="..\OpenERX.Core\OpenERX.Core.csproj" />
+    <ProjectReference Include="..\OpenERX.Dependencies\OpenERX.Dependencies.csproj" />
+    <ProjectReference Include="..\OpenERX.Repositories\OpenERX.Repositories.csproj" />
+    <ProjectReference Include="..\OpenERX.Services\OpenERX.Services.csproj" />
+  </ItemGroup>
+
+</Project>

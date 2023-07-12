@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="script.js"></script>
+    <script src="../../../lib/moment/moment.min.js"></script>
+    <title>Cadastro de CLiente</title>
+</head>
+<body>
+    <nav class="lateral-menu">
+        <div class="btn-expand">
+            <i class="bi bi-list"></i>
+        </div>
+
+        <ul>
+            <li class="item-menu">
+                <a href="../../index/index.html">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="txt-link">Início</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="../customers/customers.html">
+                    <span class="icon"><i class="bi bi-people"></i></span>
+                    <span class="txt-link">Cliente</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+   <section class="container">
+    <header>Cadastro de Cliente</header>
+
+    <form class="form" id="register-form">
+        <div class="input-box" id="input-box">
+            <label>Nome Completo:</label>
+            <input type="text" id="name" name="name" placeholder="Insira o nome aqui:" maxlength="90" required >
+        </div>
+
+        <div class="input-box">
+            <label>Nome Fantasia:</label>
+            <input type="text" id="nickname" name="nickname" placeholder="Insira o nome aqui:" maxlength="90" required>
+        </div>
+
+        <div class="column">
+            <div class="input-box">
+                <label>Data de Nascimento:</label>
+                <input type="text" id="birth-date" name="birth-date" placeholder="Insira a data aqui:" maxlength="10" required>
+            </div>
+    
+            <div class="input-box">
+                <label>CPF / CNPJ:</label>
+                <input type="text" id="identity" name="identity" placeholder="Insira o valor aqui:" maxlength="14" required>
+            </div>
+        </div>
+        <div class="input-box">
+            <label>Observação:</label>
+            <input type="text" id="note" name="note" placeholder="Insira a descrição aqui:">
+        </div>
+
+        <div class="submit">
+            <button>Salvar</button>
+        </div>
+    </form>
+    <div class="list">
+        <a href="../customers/customers.html"><button>Listar</button></a>
+    </div>
+   </section>
+</html>
