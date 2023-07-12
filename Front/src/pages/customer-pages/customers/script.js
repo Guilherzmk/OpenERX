@@ -71,8 +71,6 @@ function list(){
 
 
     function deleteCustomer(customerId){
-        console.log("o id é:" +customerId)
-
         let token = JSON.parse(localStorage.getItem("token"));
         fetch("http://localhost:5045/v1/customers/?Ids="+customerId, {
             method:"DELETE",
