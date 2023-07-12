@@ -1,6 +1,15 @@
 window.onload = function () {
 
     const registerForm = document.getElementById("register-form");
+    const listButton = document.getElementById("list");
+
+    listButton.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        localStorage.removeItem("customer");
+        window.location.replace("../customers/customers.html")
+
+    });
 
     if(localStorage.getItem("customer") == null){
         create();
