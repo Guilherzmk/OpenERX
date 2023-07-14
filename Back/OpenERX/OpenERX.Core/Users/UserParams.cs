@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,15 @@ namespace OpenERX.Core.Users
 {
     public class UserParams
     {
+        [JsonProperty("name")]
         public string Name { get; set; }
+        [JsonProperty("accessKey")]
         public string AccessKey { get; set; }
+        [JsonProperty("password")]
         public string Password { get; set; }
+        [JsonProperty("email")]
         public string Email { get; set; }
+        [JsonProperty("phone")]
         public string Phone { get; set; }
         public int TypeCode { get; set; }
         public string TypeName { get; set; }

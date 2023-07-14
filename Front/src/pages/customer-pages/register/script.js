@@ -1,5 +1,9 @@
 window.onload = function () {
 
+    if (localStorage.getItem("token") == null){
+        window.location.replace("../../sing-in/sign-in.html")
+    }
+
     const registerForm = document.getElementById("register-form");
     const listButton = document.getElementById("list");
     const identity = document.querySelector("#identity");
@@ -152,4 +156,8 @@ window.onload = function () {
 
         }
     }
+}
+function deleteToken(){
+    localStorage.removeItem("token");
+    location.reload();
 }

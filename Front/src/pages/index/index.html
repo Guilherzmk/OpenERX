@@ -13,18 +13,39 @@
         <div class="btn-expand">
             <i class="bi bi-list"></i>
         </div>
-
         <ul>
             <li class="item-menu">
-                <a href="index.html">
+                <a>
                     <span class="icon"><i class="bi bi-house"></i></span>
                     <span class="txt-link">Início</span>
                 </a>
             </li>
-            <li class="item-menu">
-                <a href="../customer-pages/customers/customers.html">
+            <li class="item-menu" id="item-menu">
+                <a>
                     <span class="icon"><i class="bi bi-people"></i></span>
                     <span class="txt-link">Cliente</span>
+                    <span class="chevron-down"><i class="bi bi-chevron-down"></i></span>
+                </a>
+                <div class="subitems">
+                    <ul>
+                        <li><a href="../customer-pages/register/register.html">Cadastro</a></li>
+                        <li><a href="../customer-pages/customers/customers.html">Listar</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="item-menu" id="item-menu"> 
+                <a>
+                    <span class="icon"><i class="bi bi-person-lines-fill"></i></span>
+                    <span class="txt-link">Perfil</span>
+                    <span class="chevron-down"><i class="bi bi-chevron-down"></i></span>
+                </a>
+            </li>
+
+            <li class="item-menu" id="logout">
+                <a onclick="deleteToken()">
+                    <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
+                    <span class="txt-link">Logout</span>
                 </a>
             </li>
         </ul>

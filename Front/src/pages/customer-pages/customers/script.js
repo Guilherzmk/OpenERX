@@ -95,3 +95,7 @@ function list(){
             window.location.replace("../register/register.html");
     }
 
+    function deleteToken(){
+        localStorage.removeItem("token");
+        location.reload();
+    }

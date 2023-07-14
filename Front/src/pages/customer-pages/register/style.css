@@ -155,3 +155,15 @@ ul li.item-menu a .txt-link{
 ul li.item-menu a .icon > i{
     font-size: 30px;
 }
+
+.subitems ul{
+    display: none;
+}
+
+.subitems ul li a{
+    line-height: 5px;
+}
+
+li.item-menu:hover .subitems ul{
+    display: inline;
+}

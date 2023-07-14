@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Clientes</title>
-    <script src="script.js" defer></script>
-    <script src="../../../lib/moment/moment.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="script.js"></script>
+    <title>Perfil de Usuário</title>
 </head>
 <body>
-
     <nav class="lateral-menu">
         <div class="btn-expand">
             <i class="bi bi-list"></i>
         </div>
         <ul>
             <li class="item-menu">
-                <a href="../../index/index.html">
+                <a>
                     <span class="icon"><i class="bi bi-house"></i></span>
                     <span class="txt-link">Início</span>
                 </a>
@@ -30,8 +28,8 @@
                 </a>
                 <div class="subitems">
                     <ul>
-                        <li><a href="../register/register.html">Cadastro</a></li>
-                        <li><a href="#">Listar</a></li>
+                        <li><a href="../customer-pages/register/register.html">Cadastro</a></li>
+                        <li><a href="../customer-pages/customers/customers.html">Listar</a></li>
                     </ul>
                 </div>
             </li>
@@ -45,7 +43,7 @@
             </li>
 
             <li class="item-menu" id="logout">
-                <a onclick="deleteToken()">
+                <a>
                     <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
                     <span class="txt-link">Logout</span>
                 </a>
@@ -53,31 +51,17 @@
         </ul>
     </nav>
 
-
-    <section class="card">
-        <header>Lista de Clientes</header>
-        <div>
-            <table class="content-table" id="content-table">
-                <thead class="thead">
-                    <tr>
-                        <th class="customer-id">ID</th>
-                        <th>Código</th>
-                        <th>Nome</th>
-                        <th>Nome Fantasia</th>
-                        <th>Data de Nascimento</th>
-                        <th>CPF / CNPJ</th>
-                        <th>Observação</th>
-                        <th class="action">Ações</th>
-                    </tr>
-                   
-                </thead>
-                <tbody id="tbody">
-                </tbody>
-            </table>
-            <div class="create" id="create">
-                <button>Cadastrar</button>
-            </div>
-        </div>  
+    <section class="container">
+        <header>Perfil de Usuário</header>
     </section>
+
+
+
+
+
+
+
+
+
 </body>
 </html>

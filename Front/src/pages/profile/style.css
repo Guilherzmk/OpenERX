@@ -46,7 +46,7 @@ ul{
 }
 
 ul li.item-menu{
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
 }
 
 ul li.item-menu:hover{
@@ -66,24 +66,17 @@ ul li.item-menu a .txt-link{
     margin-left: 30px;
 }
 
+
+
 ul li.item-menu a .icon > i{
     font-size: 30px;
 }
 
-
-
-.subitems ul{
-    display: none;
+.container header {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 115px;
+    margin-top: 30px;
+    font-weight: bold;
+    color: white;
 }
-
-.subitems ul li a{
-    line-height: 5px;
-}
-
-li.item-menu:hover .subitems ul{
-    display: inline;
-}
-
-
-
-
