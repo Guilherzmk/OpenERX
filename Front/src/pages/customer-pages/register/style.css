@@ -110,7 +110,7 @@ nav.lateral-menu{
     z-index: 4;
 }
 
-nav.lateral-menu:hover{
+nav.lateral-menu:hover, ul li.item-menu a .txt-link{
     width: 190px;
 }
 
