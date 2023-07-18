@@ -42,11 +42,11 @@ function list(){
                 actions.classList.add("action");
     
                 let imgEdit = document.createElement("img");
-                imgEdit.src = "../../../images/edit.png";
+                imgEdit.src = "../../../images/pencil.svg";
                 imgEdit.setAttribute("onclick", "updateCustomer("+JSON.stringify(item)+")");
     
                 let imgDelete = document.createElement("img");
-                imgDelete.src = "../../../images/trash.png";
+                imgDelete.src = "../../../images/trash.svg";
                 imgDelete.setAttribute("onclick", "deleteCustomer('"+item.id+"')");
     
                 actions.appendChild(imgEdit);

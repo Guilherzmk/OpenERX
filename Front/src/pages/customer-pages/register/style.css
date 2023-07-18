@@ -52,6 +52,12 @@ body{
     padding: 0 10px;
 }
 
+::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+    filter: invert(1);
+
+}
+
 .form .column{
     display: flex;
     column-gap: 10px;
@@ -111,17 +117,17 @@ nav.lateral-menu{
 }
 
 nav.lateral-menu:hover, ul li.item-menu a .txt-link{
-    width: 190px;
+    width: 210px;
 }
 
 .btn-expand{
     width: 100%;
-    padding-left: 3px;
+    padding-left: 2px;
 }
 
 .btn-expand > i{
     color: white;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
 }
 
@@ -131,7 +137,7 @@ ul{
 }
 
 ul li.item-menu{
-    transition: all 0.2s ease;
+    transition: all 0.5s ease;
 }
 
 ul li.item-menu:hover{
@@ -141,7 +147,7 @@ ul li.item-menu:hover{
 ul li.item-menu a{
     color: white;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 17px;
     padding: 20px 4%;
     display: flex;
     line-height: 30px;
@@ -149,11 +155,21 @@ ul li.item-menu a{
 
 ul li.item-menu a .txt-link{
     margin-left: 30px;
-    
 }
 
 ul li.item-menu a .icon > i{
     font-size: 30px;
+}
+
+.subitems a .subitem-icon > i{
+    color: white;
+    font-size: 28px;
+    position: relative;
+    bottom: 12px;
+}
+
+.subitems a .txt-link{
+    font-size: 16px;
 }
 
 .subitems ul{
@@ -164,6 +180,16 @@ ul li.item-menu a .icon > i{
     line-height: 5px;
 }
 
+.chevron-down{
+    transition: all 0.4s ease;
+    rotate: 270deg;
+}
+
 li.item-menu:hover .subitems ul{
     display: inline;
+}
+
+li.item-menu:hover .chevron-down{
+    rotate: 360deg;
+    
 }

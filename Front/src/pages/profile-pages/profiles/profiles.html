@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="script.js"></script>
-    <title>Home</title>
+    <title>Perfis de Acesso</title>
 </head>
-
 <body>
     <nav class="lateral-menu">
         <div class="btn-expand">
@@ -17,7 +15,7 @@
         </div>
         <ul>
             <li class="item-menu">
-                <a>
+                <a href="../../index/index.html">
                     <span class="icon"><i class="bi bi-house"></i></span>
                     <span class="txt-link">Início</span>
                 </a>
@@ -31,12 +29,12 @@
                 <div class="subitems">
                     <ul>
                         <li>
-                            <a href="../customer-pages/register/register.html">
+                            <a href="../../customer-pages/register/register.html">
                                 <span class="subitem-icon"><i class="bi bi-person-plus"></i></span>
                                 <span class="txt-link">Cadastro</span>
                             </a>
                         </li>
-                        <li><a href="../customer-pages/customers/customers.html">
+                        <li><a href="../../customer-pages/customers/customers.html">
                                 <span class="subitem-icon"><i class="bi bi-card-list"></i></span>
                                 <span class="txt-link">Listar</span>
                             </a>
@@ -54,7 +52,7 @@
                 <div class="subitems">
                     <ul>
                         <li>
-                            <a href="../profile-pages/profiles/profiles.html">
+                            <a href="#">
                                 <span class="subitem-icon"><i class="bi bi-lock"></i></span>
                                 <span class="txt-link">Perfis de Acesso</span>
                             </a>
@@ -62,7 +60,6 @@
                     </ul>
                 </div>
             </li>
-
             <li class="item-menu" id="logout">
                 <a onclick="deleteToken()">
                     <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
@@ -71,6 +68,27 @@
             </li>
         </ul>
     </nav>
-</body>
 
+    <section class="card">
+        <header>Perfis de Acesso</header>
+        <div>
+            <table class="content-table" id="content-table">
+                <thead class="thead">
+                    <tr>
+                        <th class="profile-id">ID</th>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Anotações</th>
+                        <th class="action">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+            <div class="create" id="create">
+                <button>Cadastrar</button>
+            </div>
+        </div>
+    </section>
+</body>
 </html>

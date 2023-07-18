@@ -1,5 +1,5 @@
 if (localStorage.getItem("token") == null){
-    window.location.replace("../sing-in/sign-in.html")
+    window.location.replace("../../index/index.html")
 }
 
 function deleteToken(){
