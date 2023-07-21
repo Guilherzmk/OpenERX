@@ -51,7 +51,6 @@ namespace OpenERX.Core.Users
             this.Phone = model.Phone;
             this.TypeCode = model.TypeCode;
             this.TypeName = model.TypeName;
-            this.ProfileCode = model.ProfileCode;
             this.ProfileName = model.ProfileName;
             this.StatusCode = model.StatusCode;
             this.StatusName = model.StatusName;

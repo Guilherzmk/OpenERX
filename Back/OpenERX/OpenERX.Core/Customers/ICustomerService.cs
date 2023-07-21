@@ -8,12 +8,12 @@ namespace OpenERX.Core.Customers
 {
     public interface ICustomerService : IResultService
     {
-        Task<CustomerResult> CreateAsync(CustomerParams createParams, string role);
-        Task<CustomerResult> UpdateAsync(Guid id, CustomerParams updateParams, string role);
+        Task<CustomerResult> CreateAsync(CustomerParams createParams, Guid profileId);
+        Task<CustomerResult> UpdateAsync(Guid id, CustomerParams updateParams, Guid profileId);
         Task<CustomerResult> UpdateStatusAsync(Guid id, UpdateStatusParams3 updateParams);
-        Task<CountResult> DeleteAsync(IdParams deleteParams, string role);
-        Task<CustomerResult> GetAsync(Guid id, string role);
-        Task<IList<Customer>> Find(string role);
+        Task<CountResult> DeleteAsync(IdParams deleteParams, Guid profileId);
+        Task<CustomerResult> GetAsync(Guid id, Guid profileId);
+        Task<IList<Customer>> Find(Guid profileId);
         Task<CustomerResult> StatusUpdate(Guid id, StatusType statusType);
     }
 }

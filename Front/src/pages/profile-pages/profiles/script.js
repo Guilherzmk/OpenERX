@@ -6,3 +6,4 @@ function deleteToken(){
 localStorage.removeItem("token");
 location.reload();
 }
+

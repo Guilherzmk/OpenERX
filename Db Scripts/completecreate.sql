@@ -151,7 +151,7 @@ email varchar(255),
 phone varchar(20),
 type_code int not null,
 [type_name] varchar(255),
-profile_code int not null,
+profile_id uniqueidentifier not null,
 profile_name varchar(255),
 status_code int not null,
 status_name varchar(255),
@@ -183,10 +183,14 @@ create table tb_profile
 (
 id uniqueidentifier primary key not null,
 code int not null,
-parent_id uniqueidentifier not null,
-parent_type varchar(50) not null,
+parent_id uniqueidentifier,
+parent_type varchar(50),
 name varchar(150),
-note varchar(8000)
+note varchar(8000),
+creation_date DateTime,
+exclusion_date DateTime,
+record_status_code int,
+record_status_name varchar(20)
 )
 go
 
@@ -196,12 +200,20 @@ go
 
 create table tb_profile_auths
 (
+[profile_id] uniqueidentifier not null,
+[auth_id] uniqueidentifier not null
+)
+
+if(OBJECT_ID('tb_auths') is not null)
+	drop table tb_auths
+go
+
+create table tb_auths
+(
 id uniqueidentifier primary key not null,
 code int not null,
-parent_id uniqueidentifier not null,
-parent_type varchar(150) not null,
 name varchar(150),
-note varchar(8000)
+note varchar(8000),
 )
 
 

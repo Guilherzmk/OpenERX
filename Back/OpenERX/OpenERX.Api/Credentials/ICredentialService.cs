@@ -5,6 +5,6 @@ namespace OpenERX.WebAPI.Credentials
     public interface ICredentialService
     {
         Task<User> GetContextUser();
-        Task<string> GetContextProfile();
+        Task<Guid> GetContextProfile();
     }
 }

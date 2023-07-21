@@ -9,7 +9,6 @@ namespace OpenERX.Repositories.Shared.Entities.Profiles.ProfileAuths
 {
     public interface IProfileAuthRepository
     {
-        Task<ProfileAuth> InsertProfileAuthAsync(Guid parentId, string parentType, ProfileAuth profile);
-        Task<bool> Verification(string role, string authorization);
+        Task<bool> Verification(Guid profileId, Guid authorization);
     }
 }

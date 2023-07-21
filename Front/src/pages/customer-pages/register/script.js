@@ -105,7 +105,7 @@ window.onload = function () {
 
             name.value = customer.name;
             nickname.value = customer.nickname;
-            birthDate.value = moment(customer.birthDate).format("DD/MM/YYYY");
+            birthDate.value = moment(customer.birthDate).format("YYYY-MM-DD");
             identity.value = customer.identity;
             note.value = customer.note;
 
@@ -144,14 +144,9 @@ window.onload = function () {
                         }
                     );
 
-
-
-
                 localStorage.removeItem("customer");
 
-                var allInputs = document.querySelectorAll('input');
-                allInputs.forEach(singleInput => singleInput.value = '');
-
+                window.location.replace("../customers/customers.html");
             })
 
         }

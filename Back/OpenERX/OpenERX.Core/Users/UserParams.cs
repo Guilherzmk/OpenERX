@@ -21,7 +21,7 @@ namespace OpenERX.Core.Users
         public string Phone { get; set; }
         public int TypeCode { get; set; }
         public string TypeName { get; set; }
-        public int ProfileCode { get; set; }
+        public Guid ProfileId { get; set; }
         public string ProfileName { get; set; }
         public int StatusCode { get; set; }
         public string StatusName { get; set; }

@@ -36,7 +36,7 @@ namespace OpenERX.Repositories.Users
                 .AppendLine("[phone],")
                 .AppendLine("[type_code],")
                 .AppendLine("[type_name],")
-                .AppendLine("[profile_code],")
+                .AppendLine("[profile_id],")
                 .AppendLine("[profile_name],")
                 .AppendLine("[status_code],")
                 .AppendLine("[status_name],")
@@ -69,7 +69,7 @@ namespace OpenERX.Repositories.Users
                 .AppendLine("@phone,")
                 .AppendLine("@type_code,")
                 .AppendLine("@type_name,")
-                .AppendLine("@profile_code,")
+                .AppendLine("@profile_id,")
                 .AppendLine("@profile_name,")
                 .AppendLine("@status_code,")
                 .AppendLine("@status_name,")
@@ -193,7 +193,7 @@ namespace OpenERX.Repositories.Users
             cm.Parameters.Add(new SqlParameter("@phone", user.Phone.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@type_code", user.TypeCode.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@type_name", user.TypeName.GetDbValue()));
-            cm.Parameters.Add(new SqlParameter("@profile_code", user.ProfileCode.GetDbValue()));
+            cm.Parameters.Add(new SqlParameter("@profile_id", user.ProfileId.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@profile_name", user.ProfileName.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@status_code", user.StatusCode.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@status_name", user.StatusName.GetDbValue()));
@@ -229,7 +229,7 @@ namespace OpenERX.Repositories.Users
             user.Phone = dataReader.GetString("phone");
             user.TypeCode = dataReader.GetInt32("type_code");
             user.TypeName = dataReader.GetString("type_name");
-            user.ProfileCode = dataReader.GetInt32("profile_code");
+            user.ProfileId = dataReader.GetGuid("profile_id");
             user.ProfileName = dataReader.GetString("profile_name");
             user.StatusCode = dataReader.GetInt32("status_code");
             user.StatusName = dataReader.GetString("id");

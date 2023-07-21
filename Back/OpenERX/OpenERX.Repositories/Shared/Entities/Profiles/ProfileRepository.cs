@@ -20,26 +20,30 @@ namespace OpenERX.Repositories.Shared.Entities.Profiles
             _connectionProvider = connectionProvider;
         }
 
-        public async Task<Profile> InsertProfileAsync(Guid parentId, Profile profile)
+        public async Task<Profile> InsertProfileAsync(Profile profile)
         {
             var commandText = new StringBuilder()
                 .AppendLine("INSERT INTO [tb_profile]")
                 .AppendLine("(")
                 .AppendLine("[id],")
                 .AppendLine("[code],")
-                .AppendLine("[parent_id],")
-                .AppendLine("[parent_type],")
                 .AppendLine("[name],")
-                .AppendLine("[note]")
+                .AppendLine("[note],")
+                .AppendLine("[creation_date],")
+                .AppendLine("[exclusion_date],")
+                .AppendLine("[record_status_code],")
+                .AppendLine("[record_status_name]")
                 .AppendLine(")")
                 .AppendLine("VALUES")
                 .AppendLine("(")
                 .AppendLine("@id,")
                 .AppendLine("@code,")
-                .AppendLine("@parent_id,")
-                .AppendLine("@parent_type,")
                 .AppendLine("@name,")
-                .AppendLine("@note")
+                .AppendLine("@note,")
+                .AppendLine("@creation_date,")
+                .AppendLine("@exclusion_date,")
+                .AppendLine("@record_status_code,")
+                .AppendLine("@record_status_name")
                 .AppendLine(")");
 
             using var connection = new SqlConnection(this._connectionProvider.ConnectionString);
@@ -49,7 +53,7 @@ namespace OpenERX.Repositories.Shared.Entities.Profiles
 
             cm.Parameters.Add(new SqlParameter("@code", InsertCode()));
 
-            this.SetParameters(parentId, profile, cm);
+            this.SetParameters(profile, cm);
 
             cm.ExecuteNonQuery();
 
@@ -88,16 +92,41 @@ namespace OpenERX.Repositories.Shared.Entities.Profiles
             }
         }
 
-
-        private void SetParameters(Guid parentId, Profile profile, SqlCommand cm)
+        public async Task<IList<Profile>> Find()
         {
-            var parentType = "User";
+            var l = new List<Profile>();
 
+            var commandText = GetSelectQuery()
+                .AppendLine("WHERE [record_status_code] = 1")
+                .AppendLine("ORDER BY [code] ASC");
+
+            var connection = new SqlConnection(_connectionProvider.ConnectionString);
+            connection.Open();
+
+            var cm = connection.CreateCommand();
+
+            cm.CommandText = commandText.ToString();
+
+            var dataReader = cm.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                var customer = LoadDataReader(dataReader);
+                l.Add(customer);
+            }
+
+            return l;
+        }
+
+        private void SetParameters(Profile profile, SqlCommand cm)
+        {
             cm.Parameters.Add(new SqlParameter("@id", profile.Id.GetDbValue()));
-            cm.Parameters.Add(new SqlParameter("@parent_id", parentId));
-            cm.Parameters.Add(new SqlParameter("@parent_type", parentType));
             cm.Parameters.Add(new SqlParameter("@name", profile.Name.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@note", profile.Note.GetDbValue()));
+            cm.Parameters.Add(new SqlParameter("@creation_date", profile.CreationDate.GetDbValue()));
+            cm.Parameters.Add(new SqlParameter("@exclusion_date", profile.ExclusionDate.GetDbValue()));
+            cm.Parameters.Add(new SqlParameter("@record_status_code", profile.RecordStatusCode.GetDbValue()));
+            cm.Parameters.Add(new SqlParameter("@record_status_name", profile.RecordStatusName.GetDbValue()));
 
         }
 
@@ -126,10 +155,12 @@ namespace OpenERX.Repositories.Shared.Entities.Profiles
             .AppendLine(" SELECT")
             .AppendLine(" A.[id],")
             .AppendLine(" A.[code],")
-            .AppendLine(" A.[parent_id],")
-            .AppendLine(" A.[parent_type],")
             .AppendLine(" A.[name],")
-            .AppendLine(" A.[note]")
+            .AppendLine(" A.[note],")
+            .AppendLine(" A.[creation_date],")
+            .AppendLine(" A.[exclusion_date],")
+            .AppendLine(" A.[record_status_code],")
+            .AppendLine(" A.[record_status_name]")
             .AppendLine(" FROM [tb_profile] AS A"); 
 
             return sb;

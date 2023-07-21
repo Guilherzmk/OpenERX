@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using OpenERX.Core.Customers;
+using OpenERX.Core.Profiles;
 using OpenERX.Core.SignIns;
 using OpenERX.Core.Users;
 using OpenERX.Repositories.Customers;
@@ -7,6 +8,7 @@ using OpenERX.Repositories.Shared.Entities.Addresses;
 using OpenERX.Repositories.Shared.Entities.Emails;
 using OpenERX.Repositories.Shared.Entities.Fields;
 using OpenERX.Repositories.Shared.Entities.Phones;
+using OpenERX.Repositories.Shared.Entities.Profiles;
 using OpenERX.Repositories.Shared.Entities.Profiles.ProfileAuths;
 using OpenERX.Repositories.Shared.Entities.Sites;
 using OpenERX.Repositories.Shared.Sql;
@@ -14,6 +16,7 @@ using OpenERX.Repositories.SignIns;
 using OpenERX.Repositories.Users;
 using OpenERX.Services.Credentials;
 using OpenERX.Services.Customers;
+using OpenERX.Services.Profiles;
 using OpenERX.Services.SignIns;
 using OpenERX.Services.Users;
 using OpenERX.WebAPI.Credentials;
@@ -24,6 +27,8 @@ namespace OpenERX.Test
     public class Dependency
     {
         public ICustomerService customerService;
+        public IProfileService profileService;
+        public ICredentialService credentialService;
 
         [TestInitialize]
         public void Init()
@@ -39,14 +44,20 @@ namespace OpenERX.Test
             services.AddTransient<ISiteRepository, SiteRepository>();
             services.AddTransient<IFieldsRepository, FieldsRepository>();
             services.AddTransient<IProfileAuthRepository, ProfileAuthRepository>();
-            services.AddTransient<ISignInService, SignInService>();
+            services.AddTransient<IProfileRepository, ProfileRepository>();
             services.AddTransient<ISignInRepository, SignInRepository>();
+
+            services.AddTransient<ISignInService, SignInService>();
             services.AddTransient<ICredentialService, CredentialService>();
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IProfileService, ProfileService>();
 
             var provider = services.BuildServiceProvider();
             this.customerService = provider.GetService<ICustomerService>();
+            this.profileService = provider.GetService<IProfileService>();
+            
+            
 
         }
     }

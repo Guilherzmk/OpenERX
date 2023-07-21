@@ -25,10 +25,10 @@ namespace OpenERX.Services.Customers
             this.profileAuthRepository = profileAuthRepository;
         }
 
-        public async Task<CustomerResult> CreateAsync(CustomerParams createParams, string role)
+           public async Task<CustomerResult> CreateAsync(CustomerParams createParams, Guid profileId)
         {
-            string authorization = "Create";
-            var validation = await this.profileAuthRepository.Verification(role, authorization);
+            Guid authorization = Guid.Parse("A63A50AB-50C5-48A8-BA5B-560654A4F9F7"); //Create
+            var validation = await this.profileAuthRepository.Verification(profileId, authorization);
 
             if (validation == true)
             {
@@ -59,10 +59,10 @@ namespace OpenERX.Services.Customers
             }
         }
 
-        public async Task<CustomerResult> UpdateAsync(Guid id, CustomerParams updateParams, string role)
+        public async Task<CustomerResult> UpdateAsync(Guid id, CustomerParams updateParams, Guid profileId)
         {
-            string authorization = "Update";
-            var validation = await this.profileAuthRepository.Verification(role, authorization);
+            Guid authorization = Guid.Parse("AF69BA20-3EC4-4294-861C-B2149CDF7215"); //Update
+            var validation = await this.profileAuthRepository.Verification(profileId, authorization);
 
             if (validation == true)
             {
@@ -121,10 +121,10 @@ namespace OpenERX.Services.Customers
             }
         }
 
-        public async Task<CountResult> DeleteAsync(IdParams deleteParams, string role)
+        public async Task<CountResult> DeleteAsync(IdParams deleteParams, Guid profileId)
         {
-            string authorization = "Delete";
-            var validation = await this.profileAuthRepository.Verification(role, authorization);
+            Guid authorization = Guid.Parse("155054CE-639D-4527-86E1-8EB78E8D576B"); //Delete
+            var validation = await this.profileAuthRepository.Verification(profileId, authorization);
 
             if (validation == true)
             {
@@ -166,10 +166,10 @@ namespace OpenERX.Services.Customers
 
         }
 
-        public async Task<CustomerResult> GetAsync(Guid id, string role)
+        public async Task<CustomerResult> GetAsync(Guid id, Guid profileId)
         {
-            string authorization = "Read";
-            var validation = await this.profileAuthRepository.Verification(role, authorization);
+            Guid authorization = Guid.Parse("F776C6C5-9294-443E-AF1A-82ABA4C3BBD6"); //Read
+            var validation = await this.profileAuthRepository.Verification(profileId, authorization);
 
             if (validation == true)
             {
@@ -195,10 +195,10 @@ namespace OpenERX.Services.Customers
 
         }
 
-        public async Task<IList<Customer>> Find(string role)
+        public async Task<IList<Customer>> Find(Guid profileId)
         {
-            string authorization = "Read";
-            var validation = await this.profileAuthRepository.Verification(role, authorization);
+            Guid authorization = Guid.Parse("F776C6C5-9294-443E-AF1A-82ABA4C3BBD6"); //Read
+            var validation = await this.profileAuthRepository.Verification(profileId, authorization);
 
             if (validation == true)
             {

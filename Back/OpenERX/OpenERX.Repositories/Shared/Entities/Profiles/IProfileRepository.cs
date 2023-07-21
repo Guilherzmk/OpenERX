@@ -9,7 +9,8 @@ namespace OpenERX.Repositories.Shared.Entities.Profiles
 {
     public interface IProfileRepository
     {
-        Task<Profile> InsertProfileAsync(Guid parentId, Profile profile);
+        Task<Profile> InsertProfileAsync(Profile profile);
         Task<Profile> Get(Guid id);
+        Task<IList<Profile>> Find();
     }
 }

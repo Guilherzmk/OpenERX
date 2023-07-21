@@ -34,9 +34,6 @@ namespace OpenERX.Core.Users
             if (modelParams.TypeName != null)
                 _this.TypeName = modelParams.TypeName;
 
-            if (modelParams.ProfileCode != null)
-                _this.ProfileCode = modelParams.ProfileCode;
-
             if (modelParams.ProfileName != null)
                 _this.ProfileName = modelParams.ProfileName;
 

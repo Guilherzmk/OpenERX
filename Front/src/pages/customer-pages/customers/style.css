@@ -62,7 +62,7 @@ tr:nth-child(odd){
     height: 55px;
     width: 100%;
     margin-top: 12px;
-    background-color: rgb(88, 87, 87);
+    background: rgb(65, 65, 65);
     font-size: 1.2rem;
     font-weight: 400;
     color: white;
@@ -72,9 +72,8 @@ tr:nth-child(odd){
     transition: all 0.2s ease;
 }
 
-
 .create button:hover{
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(49, 49, 49);
 }
 
 .code  {
@@ -109,7 +108,7 @@ nav.lateral-menu{
 }
 
 nav.lateral-menu:hover, ul li.item-menu a .txt-link{
-    width: 210px;
+    width: 220px;
 }
 
 .btn-expand{

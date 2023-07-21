@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using OpenERX.Commons.Params;
 using OpenERX.Commons.Types.Results;
 using OpenERX.Core.Customers;
+using OpenERX.Core.Users;
 using OpenERX.WebAPI.Credentials;
 using System.Data;
 using System.IdentityModel.Tokens.Jwt;
@@ -34,8 +35,8 @@ namespace OpenERX.Api.Controllers
         public async Task<IActionResult> CreateAsync([FromBody] CustomerParams createParams)
         {
 
-            var role = await credentialService.GetContextProfile();
-            var customer = await customerService.CreateAsync(createParams, role);
+            var id = await credentialService.GetContextProfile();
+            var customer = await customerService.CreateAsync(createParams, id);
 
             if (customerService.HasErrors())
             {
@@ -55,8 +56,8 @@ namespace OpenERX.Api.Controllers
         [Route("{id}")]
         public async Task<IActionResult> UpdateAsync([FromRoute] Guid id, [FromBody] CustomerParams updateParams)
         {
-            var role = await credentialService.GetContextProfile();
-            var customer = await customerService.UpdateAsync(id, updateParams, role);
+            var userId = await credentialService.GetContextProfile();
+            var customer = await customerService.UpdateAsync(id, updateParams, userId);
 
             if (customerService.HasErrors())
             {
@@ -79,8 +80,8 @@ namespace OpenERX.Api.Controllers
         public async Task<IActionResult> DeleteAsync([FromQuery] IdParams deleteParams)
         {
 
-            var role = await credentialService.GetContextProfile();
-            var customer = await customerService.DeleteAsync(deleteParams, role);
+            var userId = await credentialService.GetContextProfile();
+            var customer = await customerService.DeleteAsync(deleteParams, userId);
 
             if (customerService.HasErrors())
             {
@@ -101,8 +102,8 @@ namespace OpenERX.Api.Controllers
         [Route("{id}")]
         public async Task<IActionResult> GetAsync([FromRoute] Guid id)
         {
-            var role = await credentialService.GetContextProfile();
-            var customer = await customerService.GetAsync(id, role);
+            var userId = await credentialService.GetContextProfile();
+            var customer = await customerService.GetAsync(id, userId);
 
             if (customerService.HasErrors())
             {
@@ -124,8 +125,8 @@ namespace OpenERX.Api.Controllers
       
         public async Task<IActionResult> Find()
         {
-            var role = await credentialService.GetContextProfile();
-            var customers = await customerService.Find(role);
+            var id = await credentialService.GetContextProfile();
+            var customers = await customerService.Find(id);
 
             if (customerService.HasErrors())
             {

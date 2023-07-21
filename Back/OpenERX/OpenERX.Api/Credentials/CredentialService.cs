@@ -42,13 +42,13 @@ namespace OpenERX.Services.Credentials
             return null;
         }
 
-        public async Task<string> GetContextProfile()
+        public async Task<Guid> GetContextProfile()
         {
             var user = new User();
 
             user = await GetContextUser();
 
-            var profile = user.ProfileName;
+            var profile = user.ProfileId;
 
             return profile;
         }

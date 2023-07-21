@@ -1,6 +1,8 @@
 window.onload=function(){
 
-
+    if (localStorage.getItem("token") != null){
+        window.location.replace("../index/index.html")
+    }
 
     const loginForm = document.querySelector("#login");
 

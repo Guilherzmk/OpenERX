@@ -65,7 +65,7 @@ namespace OpenERX.Repositories.SignIns
             user.Phone = dataReader.GetString("phone");
             user.TypeCode = dataReader.GetInt32("type_code");
             user.TypeName = dataReader.GetString("type_name");
-            user.ProfileCode = dataReader.GetInt32("profile_code");
+            user.ProfileId = dataReader.GetGuid("profile_id");
             user.ProfileName = dataReader.GetString("profile_name");
             user.StatusCode = dataReader.GetInt32("status_code");
             user.StatusName = dataReader.GetString("id");
