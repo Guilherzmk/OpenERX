@@ -122,6 +122,7 @@ namespace OpenERX.Api.Controllers
 
         [HttpGet]
         [Route("")]
+
       
         public async Task<IActionResult> Find()
         {

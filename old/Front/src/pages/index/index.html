@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script src="script.js"></script>
+    <title>Home</title>
+  </head>
+
+  <body>
+    <nav class="lateral-menu">
+      <div class="btn-expand">
+        <i class="bi bi-list"></i>
+      </div>
+      <ul>
+        <li class="item-menu">
+          <a>
+            <span class="icon"><i class="bi bi-house"></i></span>
+            <span class="txt-link">Início</span>
+          </a>
+        </li>
+        <li class="item-menu" id="item-menu">
+          <a>
+            <span class="icon"><i class="bi bi-people"></i></span>
+            <span class="txt-link">Cliente</span>
+            <span class="chevron-down"><i class="bi bi-chevron-down"></i></span>
+          </a>
+          <div class="subitems">
+            <ul>
+              <li>
+                <a href="../customer-pages/register/">
+                  <span class="subitem-icon"
+                    ><i class="bi bi-person-plus"></i
+                  ></span>
+                  <span class="txt-link">Cadastro</span>
+                </a>
+              </li>
+              <li>
+                <a href="../customer-pages/customers/">
+                  <span class="subitem-icon"
+                    ><i class="bi bi-card-list"></i
+                  ></span>
+                  <span class="txt-link">Listar</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item-menu" id="item-menu">
+          <a>
+            <span class="icon"><i class="bi bi-person-lines-fill"></i></span>
+            <span class="txt-link">Perfil</span>
+            <span class="chevron-down"><i class="bi bi-chevron-down"></i></span>
+          </a>
+          <div class="subitems">
+            <ul>
+              <li>
+                <a href="../profile-pages/profiles/">
+                  <span class="subitem-icon"><i class="bi bi-lock"></i></span>
+                  <span class="txt-link">Perfis de Acesso</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item-menu" id="logout">
+          <a onclick="deleteToken()">
+            <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
+            <span class="txt-link">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: rgb(36, 34, 34);
+}
+
+nav.lateral-menu {
+  width: 60px; /*60*/
+  height: 100%;
+  background: rgb(41, 40, 40);
+  padding: 40px 0 40px 1%;
+  box-shadow: 3px 0 0 rgb(110, 110, 110);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  z-index: 4;
+}
+
+nav.lateral-menu:hover,
+ul li.item-menu a .txt-link {
+  width: 220px;
+}
+
+.btn-expand {
+  width: 100%;
+  padding-left: 2px;
+}
+
+.btn-expand > i {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+ul {
+  height: 100%;
+  list-style-type: none;
+}
+
+ul li.item-menu {
+  transition: all 0.5s ease;
+}
+
+ul li.item-menu:hover {
+  background-color: rgb(110, 110, 110);
+}
+
+ul li.item-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 20px 4%;
+  display: flex;
+  line-height: 32px;
+}
+
+ul li.item-menu a .txt-link {
+  margin-left: 30px;
+}
+
+ul li.item-menu a .icon > i {
+  font-size: 30px;
+}
+
+.subitems a .subitem-icon > i {
+  color: white;
+  font-size: 28px;
+  position: relative;
+  bottom: 12px;
+}
+
+.subitems a .txt-link {
+  font-size: 16px;
+}
+
+.subitems ul {
+  display: none;
+}
+
+.subitems ul li a {
+  line-height: 5px;
+}
+
+.chevron-down {
+  transition: all 0.4s ease;
+  rotate: 270deg;
+}
+
+li.item-menu:hover .subitems ul {
+  display: inline;
+}
+
+li.item-menu:hover .chevron-down {
+  rotate: 360deg;
+}

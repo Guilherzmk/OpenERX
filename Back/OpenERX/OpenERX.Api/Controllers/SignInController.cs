@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using OpenERX.Core.SignIns;
 using OpenERX.Core.Users;
+using OpenERX.Services.Customers;
+using System.Text;
 
 namespace OpenERX.Api.Controllers
 {
@@ -21,21 +23,23 @@ namespace OpenERX.Api.Controllers
         {
             var result = await _signInService.SignInAsync(@params);
 
-            if (_signInService.HasErrors() || result is null)
+            if (_signInService.HasErrors())
             {
-                var y = await Task.FromResult(Unauthorized(
-                new
+                var sb = new StringBuilder();
+                foreach (var error in _signInService.Errors)
                 {
-                    Code = 1,
-                    Text = "err"
-                }));
-
-                return y;
+                    sb.AppendLine(error.Text);
+                }
+                return BadRequest("erro");
+                throw new Exception(sb.ToString());
             }
-            var x = await Task.FromResult(this.Ok(result));
 
+            var obj = new
+            {
+                token = result.Token
+            };
 
-            return x;
+            return this.Ok(result);
         }
     }
 }
