@@ -30,7 +30,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { CustomersComponent } from './components/screens/customers/customers.component';
 import { CustomerRegisterComponent } from './components/screens/customer-register/customer-register.component';
 import { CustomerInputComponent } from './models/inputs/customer-input/customer-input.component';
-import { IConfig } from 'ngx-mask'
+
 
 @NgModule({
   declarations: [
