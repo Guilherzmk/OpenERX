@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <section class="sign-up-container">
+        <span>
+            <a href="../sing-in/sign-in.html">
+                <img src="../../images/voltar.png" alt="voltar">
+            </a>
+        </span>
+        <header>Cadastro de Usuário</header>
+        <form class="sign-up" id="sign-up">
+            <div class="input-box">
+                <span>Nome:</span>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="column">
+                <div class="input-box">
+                    <span>Email:</span>
+                    <input type="text" id="email" name="email" required>
+                </div>
+
+                <div class="input-box">
+                    <span>Telefone:</span>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <span>Usuário ou email:</span>
+                <input type="text" id="access-key" name="access-key" required>
+            </div>
+
+            <div class="input-box">
+                <span>Senha:</span>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="button">
+                <button>Registrar</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 16px;
+  flex-direction: row;
+  white-space: nowrap;
+  height: 62px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: whitesmoke;
+  z-index: 10000000;
+}
+
+a {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.logo-first-part,
+.logo-second-part {
+  color: black;
+  font-size: 26px;
+}
+
+.logo-first-part {
+  font-weight: bold;
+}
+
+.logo-second-part {
+  font-weight: 300;
+}
+
+.person {
+  margin-left: auto;
+}
+
+.items {
+  width: 260px;
+  position: fixed;
+}
+
+.content {
+  width: 100%;
+  min-height: calc(
+    100vh - 64px
+  ); /* Altura mínima da janela - altura do cabeçalho */
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}

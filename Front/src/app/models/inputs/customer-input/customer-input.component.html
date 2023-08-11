@@ -1,0 +1,25 @@
+<div class="customer-input">
+  <mat-form-field>
+    <mat-label>Tipo de Pessoa</mat-label>
+    <mat-select v>
+      <mat-option
+        *ngFor="let personType of personTypes"
+        [value]="personType.value"
+        >{{ personType.viewValue }}</mat-option
+      >
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label formControlName="identity">CPF</mat-label>
+
+    <input matInput required />
+  </mat-form-field>
+  <mat-form-field [hideRequiredMarker]="true">
+    <mat-label>Nome</mat-label>
+    <input matInput required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Nascimento</mat-label>
+    <input matInput placeholder="dd/mm/aaaa" />
+  </mat-form-field>
+</div>

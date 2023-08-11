@@ -1,0 +1,156 @@
+<div class="drawer-container">
+  <mat-drawer-container autosize class="list-container">
+    <mat-drawer #drawer class="my-drawer" mode="side" opened="true">
+      <div class="list-drawer-content">
+        <button
+          mat-raised-button
+          class="new-button"
+          color="primary"
+          (click)="openDialog()"
+        >
+          Novo
+        </button>
+      </div>
+      <div class="list-drawer-content">
+        <mat-nav-list class="items">
+          <mat-list-item class="list-item">
+            <span matListItemContent>
+              <mat-icon class="item-icon">filter_list</mat-icon>
+              <span class="item-text">Filtros</span>
+            </span>
+          </mat-list-item>
+          <mat-list-item class="list-item">
+            <span matListItemContent>
+              <mat-icon class="item-icon">clear_all</mat-icon>
+              <span class="item-text">Limpar Filtros</span>
+            </span>
+          </mat-list-item>
+          <mat-list-item class="list-item">
+            <span matListItemContent>
+              <mat-icon class="item-icon">flag</mat-icon>
+              <span class="item-text">Status</span>
+            </span>
+          </mat-list-item>
+          <mat-list-item class="list-item">
+            <span matListItemContent>
+              <mat-icon>layers</mat-icon>
+              <span class="item-text">Atributos</span>
+            </span>
+          </mat-list-item>
+          <mat-list-item class="list-item">
+            <span matListItemContent>
+              <mat-icon class="item-icon">manage_search</mat-icon>
+              <span class="item-text">Meus Filtros</span>
+            </span>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+    </mat-drawer>
+
+    <mat-drawer-content style="margin-left: 0 !important">
+      <div class="app-content">
+        <div class="customer-header">
+          <mat-nav-list class="nav-list">
+            <div class="flex-container">
+              <button (click)="drawer.toggle()" mat-icon-button>
+                <mat-icon class="item-icon">short_text</mat-icon>
+              </button>
+              <div class="customer-count">
+                <span class="customer-text">Cliente</span>
+                <p class="count">10 registros</p>
+              </div>
+              <div class="search-filter">
+                <input
+                  class="search_filter_text"
+                  type="text"
+                  id="filter"
+                  placeholder="Filtro"
+                />
+                <div class="search_icon">
+                  <mat-icon>search</mat-icon>
+                </div>
+              </div>
+            </div>
+          </mat-nav-list>
+        </div>
+        <div class="customer-table">
+          <table class="content-table">
+            <thead>
+              <tr>
+                <th>
+                  <mat-checkbox color="primary"> </mat-checkbox>
+                </th>
+                <th>
+                  <button mat-icon-button>
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                </th>
+                <th style="width: 300px">Nome</th>
+                <th style="width: 35px">Código</th>
+                <th style="width: 250px">Status</th>
+                <th style="width: 250px">Associação</th>
+                <th style="width: 250px">Cadastro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let customer of customers">
+                <td (dblclick)="onRowDoubleClick(customer)">
+                  <mat-checkbox color="primary"> </mat-checkbox>
+                </td>
+                <td (dblclick)="onRowDoubleClick(customer)">
+                  <button mat-icon-button>
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                </td>
+                <td (dblclick)="onRowDoubleClick(customer)">
+                  {{ customer.name }}
+                </td>
+                <td
+                  (dblclick)="onRowDoubleClick(customer)"
+                  style="text-align: center"
+                >
+                  {{ customer.code }}
+                </td>
+                <td (dblclick)="onRowDoubleClick(customer)"></td>
+                <td (dblclick)="onRowDoubleClick(customer)">
+                  <div class="display-box">
+                    <span class="display-label" style="margin: 0">Conta</span>
+                    <span class="display-value" style="margin: 0">openerx</span>
+                  </div>
+                  <div class="display-box">
+                    <span class="display-label" style="margin: 0">Loja</span>
+                    <span class="display-value" style="margin: 0">openerx</span>
+                  </div>
+                  <div class="display-box">
+                    <span class="display-label" style="margin: 0">Agente</span>
+                    <span class="display-value" style="margin: 0"
+                      >Guilherme</span
+                    >
+                  </div>
+                </td>
+                <td (dblclick)="onRowDoubleClick(customer)">
+                  <div class="display-box">
+                    <span class="display-label" style="margin: 0">Criação</span>
+                    <span class="display-value" style="margin: 0"
+                      >Guilherme</span
+                    >
+                  </div>
+                  <div class="display-box">
+                    <span class="display-label" style="margin: 0"
+                      >Alteração</span
+                    >
+                    <span class="display-value" style="margin: 0"
+                      >Guilherme</span
+                    >
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+
+<div class="customer-overlay"></div>
