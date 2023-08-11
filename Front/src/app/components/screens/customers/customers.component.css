@@ -169,6 +169,10 @@
   outline: none !important;
 }
 
+.customer-table tbody tr:hover{
+  background-color: #F1F3F4;
+}
+
 .customer-table tbody tr:nth-child(odd) {
   background-color: #f5f5f5;
 }
@@ -210,4 +214,5 @@
   line-height: 13px;
   text-transform: uppercase;
 }
-/*#F1F3F4*/
+
+

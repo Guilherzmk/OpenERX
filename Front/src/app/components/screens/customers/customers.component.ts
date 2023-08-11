@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { FormsModule } from '@angular/forms';
-import { NgFor } from '@angular/common';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CustomerRegisterComponent } from '../customer-register/customer-register.component';
+import { MatDialog } from '@angular/material/dialog';
 import { CustomerParams } from 'src/app/models/CustomerParams';
 import { CustomerService } from 'src/app/services/customer.service';
 
@@ -27,7 +26,7 @@ export class CustomersComponent implements OnInit {
   allComplete: boolean = false;
   customers: CustomerParams[] = [];
 
-  constructor(private customerService: CustomerService) {}
+  constructor(private customerService: CustomerService, private matDialog:MatDialog) {}
 
   ngOnInit(): void {
     this.customerService.getCustomers().subscribe((items) => {
@@ -61,5 +60,18 @@ export class CustomersComponent implements OnInit {
       return;
     }
     this.task?.subtasks.forEach((t) => (t.completed = completed));
+  }
+
+  onRowDoubleClick(item: any) {
+    console.log('Item clicado:', item);
+    // Aqui você pode fazer o que quiser com os dados do item clicado
+  }
+
+  openDialog(){
+    this.matDialog.open(CustomerRegisterComponent,{
+      width:'100%',
+      height: '100%',
+
+    })
   }
 }

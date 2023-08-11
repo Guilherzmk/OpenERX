@@ -28,9 +28,15 @@ namespace OpenERX.Services.Profiles
         public async Task<Profile> CreateAsync(ProfileParams createParams, Guid role)
         {
             Guid authorization = Guid.Parse("A63A50AB-50C5-48A8-BA5B-560654A4F9F7"); //Create
+<<<<<<< HEAD
             var validation = await profileAuthRepository.Verification(role, authorization);
 
             if(validation == true)
+=======
+           
+
+            if(  true)
+>>>>>>> eca93b874836508340f76bb5eac81074136389b0
             {
                 var credential = new Credential();
 

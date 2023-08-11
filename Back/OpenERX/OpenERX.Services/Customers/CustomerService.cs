@@ -30,7 +30,11 @@ namespace OpenERX.Services.Customers
             Guid authorization = Guid.Parse("A63A50AB-50C5-48A8-BA5B-560654A4F9F7"); //Create
             var validation = await this.profileAuthRepository.Verification(profileId, authorization);
 
+<<<<<<< HEAD
             if (validation == true)
+=======
+            if (true)
+>>>>>>> eca93b874836508340f76bb5eac81074136389b0
             {
                 var credential = new Credential();
 
@@ -198,9 +202,15 @@ namespace OpenERX.Services.Customers
         public async Task<IList<Customer>> Find(Guid profileId)
         {
             Guid authorization = Guid.Parse("F776C6C5-9294-443E-AF1A-82ABA4C3BBD6"); //Read
+<<<<<<< HEAD
             var validation = await this.profileAuthRepository.Verification(profileId, authorization);
 
             if (validation == true)
+=======
+           
+
+            if (true)
+>>>>>>> eca93b874836508340f76bb5eac81074136389b0
             {
                 try
                 {

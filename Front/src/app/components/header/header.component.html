@@ -10,30 +10,11 @@
 <mat-drawer-container autosize class="container">
   <mat-drawer #drawer opened="false" mode="over">
     <div class="items">
-      <ng-material-multilevel-menu [configuration]="config" [items]='appitems'
+      <ng-material-multilevel-menu [configuration]="config" [items]="appitems"
         (selectedItem)="selectedItem($event)"></ng-material-multilevel-menu>
     </div>
   </mat-drawer>
   <mat-drawer-content>
-    <!-- <div class="content">
-      <router-outlet></router-outlet>
-    </div> -->
+    <!-- <div class="content"></div> -->
   </mat-drawer-content>
 </mat-drawer-container>
-
-<!-- principal
-<mat-list>
-  <mat-list-item>
-    <mat-icon matListItemIcon>folder_shared</mat-icon>
-    <p matListItemLine><span>Cliente</span></p>
-  </mat-list-item>
-</mat-list> -->
-
-<!-- 
-<mat-nav-list>
-  <mat-list-item>
-    <button mat-raised-button>
-      <mat-icon>folder_shared</mat-icon> Cliente
-    </button>
-  </mat-list-item>
-</mat-nav-list> -->

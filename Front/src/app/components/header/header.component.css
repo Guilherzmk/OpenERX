@@ -9,6 +9,7 @@
   height: 62px;
   border-bottom: 1px solid #e0e0e0;
   background-color: whitesmoke;
+  z-index: 10000000;
 }
 
 a {

@@ -34,7 +34,11 @@ namespace OpenERX.Test
         public void Init()
         {
             var services = new ServiceCollection();
+<<<<<<< HEAD
             services.AddTransient<SqlConnectionProvider>(_ => new SqlConnectionProvider("server=DESKTOP-UJHJIPK\\SQLEXPRESS;database=db_openerx;user=sa;password=123456"));
+=======
+            services.AddTransient<SqlConnectionProvider>(_ => new SqlConnectionProvider("server=.;database=db_openerx;user=sa;password=123456"));
+>>>>>>> eca93b874836508340f76bb5eac81074136389b0
 
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
