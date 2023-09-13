@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+  @ViewChild(MatSidenav) sidenav!: MatSidenav;
+
   showHeader: boolean = false;
 
   appitems = [
@@ -38,7 +42,19 @@ export class HeaderComponent {
 
   config = { fontColor: '#5e5e5e' };
 
-  constructor(public route: Router) {}
+  constructor(public route: Router, private observer: BreakpointObserver) {}
+
+  ngAfterViewinit() {
+    this.observer.observe(['{max-width: 800px}']).subscribe((res) => {
+      if (res.matches) {
+        this.sidenav.mode = 'over';
+        this.sidenav.close();
+      } else {
+        this.sidenav.mode = 'side';
+        this.sidenav.open();
+      }
+    });
+  }
 
   ngOnInit() {}
 

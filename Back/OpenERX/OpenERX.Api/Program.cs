@@ -27,12 +27,9 @@ using System.Reflection;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-<<<<<<< HEAD
+
 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-=======
-
->>>>>>> eca93b874836508340f76bb5eac81074136389b0
 
 // Add services to the container.
 
@@ -41,11 +38,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(x =>
 {
-<<<<<<< HEAD
+
     x.IncludeXmlComments(xmlPath);
-=======
-  
->>>>>>> eca93b874836508340f76bb5eac81074136389b0
 
     x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -75,11 +69,9 @@ builder.Services.AddSwaggerGen(x =>
 });
 builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-<<<<<<< HEAD
+
 builder.Services.AddTransient<SqlConnectionProvider>(_ => new SqlConnectionProvider("server=DESKTOP-UJHJIPK\\SQLEXPRESS;database=db_openerx;user=sa;password=123456"));
-=======
-builder.Services.AddTransient<SqlConnectionProvider>(_ => new SqlConnectionProvider("server=.;database=db_openerx;user=sa;password=123456"));
->>>>>>> eca93b874836508340f76bb5eac81074136389b0
+
 
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();

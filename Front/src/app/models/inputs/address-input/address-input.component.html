@@ -1,0 +1,35 @@
+<div class="address-input">
+    <mat-form-field [hideRequiredMarker]="true">
+        <mat-label>CEP</mat-label>
+        <input (change)="passData()" required [dropSpecialCharacters]="false" mask="00000-000" [formControl]="zipCode"
+            matInput>
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true">
+        <mat-label>Endereço</mat-label>
+        <input (change)="passData()" [formControl]="address" matInput>
+    </mat-form-field>
+    <div class="flex-input">
+        <mat-form-field [hideRequiredMarker]="true">
+            <mat-label>Número</mat-label>
+            <input (change)="passData()" [formControl]="number" matInput>
+        </mat-form-field>
+        <mat-form-field [hideRequiredMarker]="true">
+            <mat-label>Complemento</mat-label>
+            <input (change)="passData()" [formControl]="complement" matInput>
+        </mat-form-field>
+        <mat-form-field [hideRequiredMarker]="true">
+            <mat-label>Bairro</mat-label>
+            <input (change)="passData()" [formControl]="district" matInput>
+        </mat-form-field>
+    </div>
+    <div class="flex-input">
+        <mat-form-field [hideRequiredMarker]="true">
+            <mat-label>Cidade</mat-label>
+            <input (change)="passData()" [formControl]="city" matInput>
+        </mat-form-field>
+        <mat-form-field [hideRequiredMarker]="true">
+            <mat-label>UF</mat-label>
+            <input (change)="passData()" [formControl]="state" matInput>
+        </mat-form-field>
+    </div>
+</div>

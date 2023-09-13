@@ -1,5 +1,6 @@
 ﻿ 
 using OpenERX.Commons.Credentials;
+using OpenERX.Commons.Functions;
 using OpenERX.Commons.Results;
 
 namespace OpenERX.Core.Customers
@@ -18,6 +19,13 @@ namespace OpenERX.Core.Customers
             resultService);
 
             //_this.RecordUpdate(credential);
+
+            
+            _this.ChangeUserId = credential.UserId;
+            _this.ChangeUserName = credential.UserName;
+            _this.ChangeDate = DateTime.UtcNow;
+            
+
             return _this;
         }
     }

@@ -18,6 +18,12 @@ namespace OpenERX.Repositories.Shared.Entities.Addresses
 
         public async Task<Address> InsertAddressAsync(Guid parentId, Address address)
         {
+            if(address.ZipCode is null)
+            {
+                return null;
+            }
+
+
             var commandText = new StringBuilder()
             .AppendLine("INSERT INTO [tb_address]")
             .AppendLine(" (")

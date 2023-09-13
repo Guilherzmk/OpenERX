@@ -1,7 +1,7 @@
 ﻿ 
 namespace OpenERX.Commons.Credentials
 {
-    public class Credential
+    public partial class Credential
     {
         public Guid AccountId { get; set; }
         public int AccountCode { get; set; }
@@ -9,7 +9,7 @@ namespace OpenERX.Commons.Credentials
         public Guid UserId { get; set; }
         public int UserCode { get; set; }
         public string UserName { get; set; }
-        public int ProfileCode { get; set; }
+        public Guid ProfileCode { get; set; }
         public int AccessTypeCode { get; set; }
         public Guid StoreId { get; set; }
         public int StoreCode { get; set; }

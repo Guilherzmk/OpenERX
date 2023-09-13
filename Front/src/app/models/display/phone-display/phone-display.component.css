@@ -1,0 +1,112 @@
+.app-title {
+  font-size: 18px;
+  line-height: 20px;
+  color: #616161;
+  word-wrap: break-word !important;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-label {
+  font-size: 11px;
+  line-height: 12px;
+  color: #00000073;
+  word-wrap: break-word !important;
+  font-weight: 400;
+}
+
+.app-value {
+  font-size: 14px;
+  line-height: 16px;
+  color: #2e2e2e;
+  word-wrap: break-word !important;
+}
+
+.app-phone {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: left;
+  row-gap: 0.75rem rem;
+  row-gap: 0.75rem rem;
+  margin-top: 0.5rem;
+}
+
+.app-note {
+  font-size: 9px;
+  line-height: 10px;
+  color: #2e2e2e;
+  word-wrap: break-word !important;
+  font-weight: 300;
+}
+
+.app-phone {
+  margin-bottom: 18px;
+}
+
+.phone-data {
+  margin-left: 15px;
+  margin-top: 7px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.lateral-bar > p {
+  vertical-align: middle;
+  background-color: #a8a8a8;
+  color: #a8a8a8;
+  width: 2px;
+  height: 100%;
+}
+
+.menu {
+  min-width: 112px;
+  max-width: 280px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 48px);
+  border-radius: 4px;
+  outline: 0;
+  min-height: 64px;
+  background: white;
+  box-shadow: 0 2px 4px -1px #0003, 0 4px 5px #00000024, 0 1px 10px #0000001f;
+}
+
+.menuButton {
+  width: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 48px;
+  height: 48px;
+  padding: 0 16px;
+  text-align: left;
+  text-decoration: none;
+  max-width: 100%;
+  position: relative;
+  vertical-align: middle;
+}
+
+.menuIcon {
+  margin-right: 16px;
+  vertical-align: middle;
+  color: #0000008a;
+  -webkit-user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  width: 24px;
+}

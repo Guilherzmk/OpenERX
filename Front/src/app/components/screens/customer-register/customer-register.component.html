@@ -1,22 +1,26 @@
-<div class="customer-toolbar">
-  <div class="customer-text">Novo Cliente</div>
-  <div class="customer-buttons">
-    <button
-      mat-raised-button
-      color="primary"
-      class="button-left"
-      style="border-radius: 24px"
-    >
-      Confirmar
-    </button>
-    <button mat-raised-button class="button-right" style="border-radius: 24px">
-      Cancelar
-    </button>
+<form>
+  <div class="customer-toolbar">
+    <div class="customer-text">Novo Cliente</div>
+    <div class="customer-buttons">
+      <button (click)="submit()" type="submit" mat-raised-button color="primary" class="button-left"
+        style="border-radius: 24px">
+        Confirmar
+      </button>
+      <button (click)="closeDialog()" mat-raised-button class="button-right" style="border-radius: 24px">
+        Cancelar
+      </button>
+    </div>
   </div>
-</div>
-<div class="customer-form">
-  <div class="customer-card">
-    <div class="customer-title">Cliente</div>
-    <app-customer-input></app-customer-input>
+  <div class="customer-form">
+    <div class="customer-card">
+      <div class="customer-title">Cliente</div>
+      <app-customer-input (receiveData)="receiveCustomer($event)"></app-customer-input>
+    </div>
+    <div>
+      <div class="customer-card">
+        <div class="customer-title">Endereço</div>
+        <app-address-input (receiveData)="receiveAddress($event)"></app-address-input>
+      </div>
+    </div>
   </div>
-</div>
+</form>

@@ -1,6 +1,6 @@
 export interface EmailParams {
-  typeCode: number;
-  typeName: string;
-  address: string;
-  note: string;
+  typeCode?: number;
+  typeName?: string;
+  address?: string;
+  note?: string;
 }

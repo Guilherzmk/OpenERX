@@ -1,0 +1,97 @@
+<div class="drawer-container">
+    <mat-drawer-container autosize [hasBackdrop]="false" class="list-container">
+        <mat-drawer #drawer class="my-drawer" mode="push" opened="true">
+            <div class="list-drawer-content">
+                <button mat-raised-button class="new-button" color="primary" (click)="openDialog()">
+                    Novo
+                </button>
+            </div>
+            <div class="list-drawer-content">
+                <mat-nav-list class="items">
+                    <mat-list-item class="list-item" (click)="closeScreen()">
+                        <span matListItemContent>
+                            <mat-icon class="item-icon">article</mat-icon>
+                            <span class="item-text">Clientes</span>
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item class="list-item">
+                        <span matListItemContent>
+                            <mat-icon class="item-icon">flag</mat-icon>
+                            <span class="item-text">Alterar Status</span>
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item class="list-item">
+                        <span matListItemContent>
+                            <mat-icon class="item-icon">delete</mat-icon>
+                            <span class="item-text">Excluir</span>
+                        </span>
+                    </mat-list-item>
+                </mat-nav-list>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div class="app-content">
+                <div class="customer-header">
+                    <mat-nav-list class="nav-list">
+                        <div class="flex-container">
+                            <button (click)="drawer.toggle()" mat-icon-button>
+                                <mat-icon class="item-icon">short_text</mat-icon>
+                            </button>
+                            <div class="customer-count">
+                                <span class="customer-text" (click)="updateCustomer() ">Cliente</span>
+                            </div>
+                            <div class="cancel-button">
+                                <button mat-raised-button (click)="closeScreen()">
+                                    Sair
+                                </button>
+                            </div>
+                        </div>
+                    </mat-nav-list>
+                </div>
+
+                <div class="customer-content">
+                    <form>
+                        <mat-tab-group>
+                            <mat-tab class="mat-label" label="Cadastro">
+                                <div class="all-block">
+                                    <div class="half-block">
+                                        <div class="customer-detail">
+                                            <app-customer-display-detail [id]="customer.id!" [name]="customer.name!"
+                                                [personType]="customer.personTypeCode!" [nickname]="customer.nickname!"
+                                                [birthDate]="customer.birthDate!" [identity]=" customer.identity!"
+                                                [note]="customer.note!"></app-customer-display-detail>
+                                        </div>
+                                        <div class="phone-detail">
+                                            <app-phone-display [phones]="customer.phones!"></app-phone-display>
+                                        </div>
+                                        <div class="email-detail">
+                                            <app-email-display [emails]="customer.emails!"></app-email-display>
+                                        </div>
+                                    </div>
+                                    <div class="half-block">
+                                        <div class="address-detail">
+                                            <app-address-display
+                                                [addresses]="customer.addresses!"></app-address-display>
+                                        </div>
+                                        <div class="log-detail">
+                                            <app-log-display [creationName]="customer.creationUserName!"
+                                                [creationDate]="customer.creationDate!"
+                                                [changeName]="customer.changeUserName!"
+                                                [changeDate]="customer.changeDate!" [id]="customer.id!"
+                                                [code]="customer.code!"></app-log-display>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-tab>
+                        </mat-tab-group>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
+<div class=" customer-overlay">
+</div>

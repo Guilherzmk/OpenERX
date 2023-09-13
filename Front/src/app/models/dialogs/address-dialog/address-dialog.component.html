@@ -1,0 +1,53 @@
+<div class="container">
+    <h1>Endereço</h1>
+
+    <form [formGroup]="addressForm">
+        <div class="form-field">
+            <mat-form-field>
+                <mat-label>CEP</mat-label>
+                <input id="zipCode" mask="00000-000" formControlName="zipCode" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Endereço</mat-label>
+                <input formControlName="address" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Número</mat-label>
+                <input formControlName="number" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Complemento</mat-label>
+                <input formControlName="complement" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Bairro</mat-label>
+                <input formControlName="district" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Cidade</mat-label>
+                <input formControlName="city" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>UF</mat-label>
+                <input formControlName="state" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Tipo</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option *ngFor="let addressType of addressTypes"
+                        [value]="addressType.value">{{addressType.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Observação</mat-label>
+                <input formControlName="note" matInput>
+            </mat-form-field>
+        </div>
+        <div class="actions">
+            <button mat-raised-button class="button" color="primary" (click)="confirmAddress()">Confirmar</button>
+            <button mat-raised-button class="right-button" (click)="cancelClick()">Cancelar</button>
+        </div>
+    </form>
+
+
+</div>

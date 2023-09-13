@@ -36,7 +36,9 @@ namespace OpenERX.Api.Controllers
         {
 
             var id = await credentialService.GetContextProfile();
-            var customer = await customerService.CreateAsync(createParams, id);
+            var credential = await credentialService.CreateCredential();
+
+            var customer = await customerService.CreateAsync(createParams, id, credential);
 
             if (customerService.HasErrors())
             {
@@ -57,7 +59,8 @@ namespace OpenERX.Api.Controllers
         public async Task<IActionResult> UpdateAsync([FromRoute] Guid id, [FromBody] CustomerParams updateParams)
         {
             var userId = await credentialService.GetContextProfile();
-            var customer = await customerService.UpdateAsync(id, updateParams, userId);
+            var credential = await credentialService.CreateCredential();
+            var customer = await customerService.UpdateAsync(id, updateParams, userId, credential);
 
             if (customerService.HasErrors())
             {
@@ -70,7 +73,7 @@ namespace OpenERX.Api.Controllers
                 throw new Exception(sb.ToString());
             }
 
-            return this.Ok();
+            return this.Ok(customer);
 
 
         }
@@ -116,7 +119,7 @@ namespace OpenERX.Api.Controllers
                 throw new Exception(sb.ToString());
             }
 
-            return this.Ok();
+            return this.Ok(customer);
 
         }
 

@@ -1,25 +1,33 @@
 <div class="customer-input">
+
   <mat-form-field>
     <mat-label>Tipo de Pessoa</mat-label>
-    <mat-select v>
-      <mat-option
-        *ngFor="let personType of personTypes"
-        [value]="personType.value"
-        >{{ personType.viewValue }}</mat-option
-      >
+    <mat-select (change)="passData()" [formControl]="personType">
+      <mat-option *ngFor="let personType of personTypes" [value]="personType.value">{{ personType.viewValue
+        }}</mat-option>
     </mat-select>
+    <mat-error *ngIf="personType.invalid">Tipo de pessoa é obrigatório</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <mat-label formControlName="identity">CPF</mat-label>
-
-    <input matInput required />
+    <mat-label>{{identityPlaceholder()}}</mat-label>
+    <input (change)="passData()" [mask]="identityMask()" [formControl]="identity" matInput required />
+    <mat-error *ngIf="identity.invalid">{{identityPlaceholder()}} é obrigatório</mat-error>
   </mat-form-field>
   <mat-form-field [hideRequiredMarker]="true">
     <mat-label>Nome</mat-label>
-    <input matInput required />
+    <input (change)="passData()" matInput [formControl]="name" required />
+    <mat-error *ngIf="name.invalid">Nome é obrigatório</mat-error>
+    <mat-error></mat-error>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Nascimento</mat-label>
-    <input matInput placeholder="dd/mm/aaaa" />
+    <input (change)="passData()" [formControl]="birthDate" mask="d0/M0/0000" [dropSpecialCharacters]="false" matInput
+      placeholder="dd/mm/aaaa" />
   </mat-form-field>
+  <mat-form-field>
+    <mat-label>Observação</mat-label>
+    <textarea (change)="passData()" cdkTextareaAutosize [formControl]="note" matInput></textarea>
+  </mat-form-field>
+  <app-phone-input #phoneInput (receiveData)="receivePhone($event)"></app-phone-input>
+  <app-email-input (receiveData)="receiveEmail($event)"></app-email-input>
 </div>

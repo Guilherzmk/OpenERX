@@ -1,0 +1,44 @@
+<div class="email-detail">
+    <div class="header">
+        <div class="app-title">
+            E-mails
+        </div>
+        <div class="button">
+            <button mat-icon-button [matMenuTriggerFor]="secondMenu">
+                <mat-icon class="item-icon">more_vert</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="email" *ngFor="let email of emails; let i = index" (click)="selectEmail(i)">
+        <div class="app-email" [matMenuTriggerFor]="menu">
+            <div class="lateral-bar">
+                <p>|</p>
+            </div>
+            <div class="email-data">
+                <div class="app-label">
+                    {{emailType(i)}}
+                </div>
+                <div class="app-value">
+                    {{email.address}}
+                </div>
+                <div class="app-note">
+                    {{email.note}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<mat-menu #menu="matMenu" class="menu">
+    <button class="menuButton" (click)="openDialog()"> <mat-icon class="menuIcon">add</mat-icon> Adicionar
+        Email</button>
+    <button class="menuButton" (click)="openEditDialog()"> <mat-icon class="menuIcon">edit</mat-icon> Editar
+        Email</button>
+    <button class="menuButton" (click)="deleteEmail()"> <mat-icon class="menuIcon">delete</mat-icon> Deletar
+        Email</button>
+</mat-menu>
+<mat-menu #secondMenu="matMenu" class="menu">
+    <button class="menuButton" (click)="openDialog()"> <mat-icon class="menuIcon">add</mat-icon> Adicionar
+        Email</button>
+    <button class="menuButton" (click)="deleteAllEmail()"> <mat-icon class="menuIcon">clear_all</mat-icon> Excluir
+        Todos</button>
+</mat-menu>

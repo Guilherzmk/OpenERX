@@ -13,14 +13,13 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  width: 100%;
+
   overflow-x: hidden;
 }
 
 .customer-header {
   display: flex;
   flex-direction: column;
-  margin-left: 240px;
   height: auto;
 
   box-sizing: border-box;
@@ -76,9 +75,7 @@
 
 .flex-container {
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
   white-space: nowrap;
   margin-left: auto;
@@ -98,7 +95,7 @@
 
 .customer-count {
   display: flex;
-
+  margin-right: auto;
   flex-direction: column;
 }
 
@@ -116,21 +113,42 @@
   margin-bottom: 0px !important;
 }
 
+mat-drawer {
+  box-shadow: none;
+}
+
 .search-filter {
-  margin-left: auto;
-  margin-right: 0;
+  vertical-align: middle;
+  border: 0;
+  background-color: #f1f3f4;
+  border-radius: 30px;
+  padding: 1px;
+  margin-right: 10px;
+  margin-right: 250px;
+  min-width: 200px;
+  z-index: 50;
+  display: flex;
+  flex-direction: row;
 }
 
 .search-filter > input {
-  background-color: #f1f3f4;
-  border-radius: 30px;
-  padding: 14px;
-  min-width: 200px;
-  display: flex;
-  flex-direction: row;
+  color: gray;
+  font-size: 0.9rem;
+  z-index: 60;
+  cursor: text;
+  text-indent: 20px;
   border: none;
-  outline: none;
-  padding-left: 16px;
+  border-radius: 3px;
+  background: transparent;
+  outline: 0;
+}
+
+.search-filter > button {
+  border: none;
+  background: transparent;
+  padding-right: 10px;
+  padding-top: 12px;
+  line-height: 36px;
 }
 
 .search-filter > input::placeholder {
@@ -148,29 +166,34 @@
 
 .customer-table {
   display: flex;
-  margin-left: 240px;
+  margin-right: 250px;
 }
 
 .content-table {
-  border-collapse: collapse;
   width: 100%;
 }
 
-.customer-table > thead {
+table {
   border-collapse: collapse;
+}
+
+.customer-table > thead {
+  border-collapse: separate;
 }
 
 .customer-table tbody {
   border-top: #e0e0e0 solid 1px;
+  border-collapse: separate;
 }
 
 .customer-table tr {
   padding: 0 15px;
+
   outline: none !important;
 }
 
-.customer-table tbody tr:hover{
-  background-color: #F1F3F4;
+.customer-table tbody tr:hover {
+  background-color: #f1f3f4;
 }
 
 .customer-table tbody tr:nth-child(odd) {
@@ -181,13 +204,14 @@
   text-align: left;
   font-size: 12px;
   font-weight: 500;
-  padding: 5px 15px;
+
   text-transform: uppercase;
+  outline: none !important;
 }
 
 .customer-table td {
   text-align: left;
-  padding: 5px 15px;
+
   outline: none;
 }
 
@@ -215,4 +239,16 @@
   text-transform: uppercase;
 }
 
+.display-note {
+  font-size: 11px;
+  line-height: 12px;
+  color: #2e2e2e;
+  word-wrap: break-word !important;
+}
 
+.fullscreen-dialog {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: 100%;
+  height: 100%;
+}

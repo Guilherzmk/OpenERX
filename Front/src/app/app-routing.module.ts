@@ -5,6 +5,7 @@ import { HomeComponent } from './components/screens/home/home.component';
 import { authGuard } from './shared/auth.guard';
 import { LayoutComponent } from './components/layout/layout.component';
 import { CustomersComponent } from './components/screens/customers/customers.component';
+import { CustomerDetailComponent } from './components/screens/customer-detail/customer-detail.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,11 @@ const routes: Routes = [
     canActivate: [authGuard],
     children: [
       { path: '', component: HomeComponent },
-      { path: 'customers', component: CustomersComponent },
+      {
+        path: 'customers',
+        component: CustomersComponent,
+      },
+      { path: 'customers/:id/detail', component: CustomerDetailComponent },
     ],
   },
   {

@@ -1,6 +1,6 @@
 <div class="drawer-container">
-  <mat-drawer-container autosize class="list-container">
-    <mat-drawer #drawer class="my-drawer" mode="side" opened="true">
+  <mat-drawer-container autosize [hasBackdrop]="false" class="list-container">
+    <mat-drawer #drawer class="my-drawer" mode="push" opened="true">
       <div class="list-drawer-content">
         <button mat-raised-button class="new-button" color="primary" (click)="openDialog()">
           Novo
@@ -41,8 +41,7 @@
         </mat-nav-list>
       </div>
     </mat-drawer>
-
-    <mat-drawer-content style="margin-left: 0 !important">
+    <mat-drawer-content>
       <div class="app-content">
         <div class="customer-header">
           <mat-nav-list class="nav-list">
@@ -52,13 +51,11 @@
               </button>
               <div class="customer-count">
                 <span class="customer-text">Cliente</span>
-                <p class="count">10 registros</p>
+                <p class="count">{{customerLength()}} registros</p>
               </div>
               <div class="search-filter">
                 <input class="search_filter_text" type="text" id="filter" placeholder="Filtro" />
-                <div class="search_icon">
-                  <mat-icon>search</mat-icon>
-                </div>
+                <button><mat-icon>search</mat-icon></button>
               </div>
             </div>
           </mat-nav-list>
@@ -67,10 +64,11 @@
           <table class="content-table">
             <thead>
               <tr>
-                <th>
+                <th style="width: 40px !important;">
                   <mat-checkbox color="primary"> </mat-checkbox>
                 </th>
-                <th>
+
+                <th style="width: 40px !important;">
                   <button mat-icon-button>
                     <mat-icon>more_vert</mat-icon>
                   </button>
@@ -84,11 +82,12 @@
             </thead>
             <tbody>
               <tr *ngFor="let customer of customers">
-                <td (dblclick)="onRowDoubleClick(customer)">
+
+                <td class="check-box" (dblclick)="onRowDoubleClick(customer)">
                   <mat-checkbox color="primary"> </mat-checkbox>
                 </td>
                 <td (dblclick)="onRowDoubleClick(customer)">
-                  <button mat-icon-button>
+                  <button class="left-button" mat-icon-button>
                     <mat-icon>more_vert</mat-icon>
                   </button>
                 </td>
@@ -116,11 +115,16 @@
                 <td (dblclick)="onRowDoubleClick(customer)">
                   <div class="display-box">
                     <span class="display-label" style="margin: 0">Criação</span>
-                    <span class="display-value" style="margin: 0">Guilherme</span>
+                    <span class="display-value" style="margin: 0">{{customer.creationUserName}}</span>
+                    <span class="display-note" style="margin: 0">{{convertCreationDate(customers.length)}}</span>
                   </div>
                   <div class="display-box">
-                    <span class="display-label" style="margin: 0">Alteração</span>
-                    <span class="display-value" style="margin: 0">Guilherme</span>
+                    <span *ngIf="convertChangeDate(customers.length) == '0001-01-01T00:00:00'" class="display-label"
+                      style="margin: 0">Alteração</span>
+                    <span *ngIf="convertChangeDate(customers.length) == '0001-01-01T00:00:00'" class="display-value"
+                      style="margin: 0">Guilherme</span>
+                    <span *ngIf="convertChangeDate(customers.length) == '0001-01-01T00:00:00'" class="display-note"
+                      style="margin: 0">{{convertChangeDate(customers.length)}}</span>
                   </div>
                 </td>
               </tr>
@@ -131,5 +135,4 @@
     </mat-drawer-content>
   </mat-drawer-container>
 </div>
-
 <div class="customer-overlay"></div>

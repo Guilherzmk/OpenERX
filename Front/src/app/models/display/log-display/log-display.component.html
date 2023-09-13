@@ -1,0 +1,54 @@
+<div class="log-detail">
+    <div class="header">
+        <div class="app-title">
+            Cadastro
+        </div>
+    </div>
+    <div class="log">
+        <div class="app-log">
+            <div class="log-data">
+                <div class="row">
+                    <div class="app-label">
+                        Criação
+                    </div>
+                    <div class="app-value">
+                        {{creationName}}
+                    </div>
+                    <div class="app-note">
+                        {{creationDate}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="app-label">
+                        <span *ngIf="changeDate == '0001-01-01T00:00:00'">Alteração</span>
+                    </div>
+                    <div class="app-value">
+                        <span *ngIf="changeDate == '0001-01-01T00:00:00'">{{changeName}}</span>
+                    </div>
+                    <div class="app-note">
+                        <span *ngIf="changeDate == '0001-01-01T00:00:00'">{{changeDate}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="app-label">
+                        ID
+                    </div>
+                    <div class="app-value">
+                        {{id}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="app-label">
+                        Código
+                    </div>
+                    <div class="app-value">
+                        {{code}}
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

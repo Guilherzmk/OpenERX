@@ -1,0 +1,54 @@
+<div class="customer-detail">
+    <div class="header">
+        <div class="app-title">
+            Cliente
+        </div>
+        <div class="button">
+            <button (click)="openDialog()" mat-icon-button>
+                <mat-icon class="item-icon">edit_note</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="app-label">
+        Nome
+    </div>
+    <div class="customer-name" [matMenuTriggerFor]="menuName">
+        {{name}}
+        <div class="customer-nickname">
+            {{nickname}}
+        </div>
+    </div>
+    <div class="app-label">
+        Nascimento
+    </div>
+    <div class="customer-birth-date" [matMenuTriggerFor]="menuBirthDate">
+        {{convertBirthDate()}}
+    </div>
+    <div class="app-label">
+        Identidade
+    </div>
+    <div class="customer-identity" [matMenuTriggerFor]="menuIdentity">
+        {{identity}}
+    </div>
+    <div class="app-label">
+        Observação
+    </div>
+    <div class="customer-note">
+        {{note}}
+    </div>
+</div>
+<mat-menu #menuName="matMenu" class="menu">
+    <button [cdkCopyToClipboard]="name" class="menuButton"> <mat-icon class="menuIcon">content_copy</mat-icon>
+        Copiar
+    </button>
+</mat-menu>
+<mat-menu #menuBirthDate="matMenu" class="menu">
+    <button [cdkCopyToClipboard]="birthDate" class="menuButton"> <mat-icon class="menuIcon">content_copy</mat-icon>
+        Copiar
+    </button>
+</mat-menu>
+<mat-menu #menuIdentity="matMenu" class="menu">
+    <button [cdkCopyToClipboard]="identity" class="menuButton"> <mat-icon class="menuIcon">content_copy</mat-icon>
+        Copiar
+    </button>
+</mat-menu>

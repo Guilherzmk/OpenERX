@@ -1,0 +1,241 @@
+.drawer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.my-drawer {
+  width: 240px;
+  overflow-x: hidden;
+}
+
+.nav-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  overflow-x: hidden;
+}
+
+.customer-header {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+
+  box-sizing: border-box;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 64px);
+}
+
+.list-drawer-content {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.new-button {
+  margin-left: 12px;
+  border-radius: 24px;
+  height: 36px;
+  box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+}
+
+.items {
+  display: block;
+  align-items: flex-start;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  width: 240px;
+  text-align: left;
+  border-end-end-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.item-icon {
+  vertical-align: middle;
+}
+
+.item-text {
+  padding-left: 14px;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #616161;
+  line-height: 10px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  margin-left: auto;
+  width: 100%;
+  height: 3.5rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.flex-container button {
+  vertical-align: middle;
+}
+
+.customer-list {
+  width: 240px;
+}
+
+.customer-count {
+  display: flex;
+  margin-right: auto;
+  flex-direction: column;
+}
+
+.customer-text {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.count {
+  font-size: 10px;
+  line-height: 11px;
+  color: #2e2e2e;
+  word-wrap: break-word;
+  margin-bottom: 0px !important;
+}
+
+mat-drawer {
+  box-shadow: none;
+  background: transparent;
+}
+
+.display-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 3px 0;
+}
+
+.display-label {
+  font-size: 11px;
+  color: #00000073;
+  line-height: 13px;
+}
+
+.display-value {
+  font-size: 13px;
+  color: #2e2e2e;
+  word-wrap: break-word !important;
+  line-height: 13px;
+  text-transform: uppercase;
+}
+
+.display-note {
+  font-size: 11px;
+  line-height: 12px;
+  color: #2e2e2e;
+  word-wrap: break-word !important;
+}
+
+.fullscreen-dialog {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: 100%;
+  height: 100%;
+}
+
+.cancel-button {
+  margin-right: 250px;
+  display: flex;
+  flex-direction: row;
+}
+
+.cancel-button > button {
+  box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+  border-radius: 24px !important;
+  height: 36px;
+  box-sizing: border-box;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  overflow: visible;
+  transition: 400ms;
+}
+
+.customer-detail {
+  margin: 5px;
+  border: 1px solid #ebebeb;
+  background-color: #fff;
+  border-radius: 8px;
+
+  padding: 8px 16px 8px 16px;
+}
+
+.phone-detail {
+  margin: 5px;
+  border: 1px solid #ebebeb;
+  background-color: #fff;
+  border-radius: 8px;
+
+  padding: 8px 16px 8px 16px;
+}
+.email-detail {
+  margin: 5px;
+  border: 1px solid #ebebeb;
+  background-color: #fff;
+  border-radius: 8px;
+
+  padding: 8px 16px 8px 16px;
+}
+
+.address-detail {
+  margin: 5px;
+  border: 1px solid #ebebeb;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-right: 250px;
+  padding: 8px 16px 8px 16px;
+}
+.log-detail {
+  margin: 5px;
+  border: 1px solid #ebebeb;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-right: 250px;
+  padding: 8px 16px 8px 16px;
+}
+
+.half-block {
+  width: 50%;
+}
+
+.all-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0.375rem;
+}

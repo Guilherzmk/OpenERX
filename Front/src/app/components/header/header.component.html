@@ -1,13 +1,30 @@
 <mat-toolbar>
   <mat-toolbar-row class="header">
-    <button mat-icon-button (click)="drawer.toggle()">
+    <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <a href="#"><span class="logo-first-part">Open</span><span class="logo-second-part">ERX</span></a>
     <button mat-icon-button class="person"><mat-icon>person</mat-icon></button>
   </mat-toolbar-row>
 </mat-toolbar>
-<mat-drawer-container autosize class="container">
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over">
+    <ng-material-multilevel-menu [configuration]="config" [items]="appitems"
+      (selectedItem)="selectedItem($event)"></ng-material-multilevel-menu>
+  </mat-sidenav>
+  <mat-sidenav-content style="width: 100%;">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+<!-- <mat-drawer-container autosize class="container">
   <mat-drawer #drawer opened="false" mode="over">
     <div class="items">
       <ng-material-multilevel-menu [configuration]="config" [items]="appitems"
@@ -15,6 +32,6 @@
     </div>
   </mat-drawer>
   <mat-drawer-content>
-    <!-- <div class="content"></div> -->
+    <div class="content"></div>
   </mat-drawer-content>
-</mat-drawer-container>
+</mat-drawer-container> -->

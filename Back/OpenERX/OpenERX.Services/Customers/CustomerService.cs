@@ -25,19 +25,14 @@ namespace OpenERX.Services.Customers
             this.profileAuthRepository = profileAuthRepository;
         }
 
-           public async Task<CustomerResult> CreateAsync(CustomerParams createParams, Guid profileId)
+        public async Task<CustomerResult> CreateAsync(CustomerParams createParams, Guid profileId, Credential credential)
         {
             Guid authorization = Guid.Parse("A63A50AB-50C5-48A8-BA5B-560654A4F9F7"); //Create
             var validation = await this.profileAuthRepository.Verification(profileId, authorization);
 
-<<<<<<< HEAD
-            if (validation == true)
-=======
-            if (true)
->>>>>>> eca93b874836508340f76bb5eac81074136389b0
-            {
-                var credential = new Credential();
 
+            if (validation == true)
+            {
                 try
                 {
                     var model = await Customer.CreateAsync(
@@ -63,21 +58,18 @@ namespace OpenERX.Services.Customers
             }
         }
 
-        public async Task<CustomerResult> UpdateAsync(Guid id, CustomerParams updateParams, Guid profileId)
+        public async Task<CustomerResult> UpdateAsync(Guid id, CustomerParams updateParams, Guid profileId, Credential credential)
         {
             Guid authorization = Guid.Parse("AF69BA20-3EC4-4294-861C-B2149CDF7215"); //Update
             var validation = await this.profileAuthRepository.Verification(profileId, authorization);
 
             if (validation == true)
             {
-                var credential = new Credential();
-
                 try
                 {
-
                     var model = await this.customerRepository.GetAsync(id);
 
-                    await model.UpdateAsync(
+                    model = await model.UpdateAsync(
                         updateParams,
                         credential,
                         this);
@@ -202,16 +194,12 @@ namespace OpenERX.Services.Customers
         public async Task<IList<Customer>> Find(Guid profileId)
         {
             Guid authorization = Guid.Parse("F776C6C5-9294-443E-AF1A-82ABA4C3BBD6"); //Read
-<<<<<<< HEAD
+
             var validation = await this.profileAuthRepository.Verification(profileId, authorization);
 
             if (validation == true)
-=======
-           
-
-            if (true)
->>>>>>> eca93b874836508340f76bb5eac81074136389b0
             {
+
                 try
                 {
                     var model = await this.customerRepository.FindAsync();

@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Email</h1>
+
+    <form [formGroup]="emailForm">
+        <div class="form-field">
+            <mat-form-field>
+                <mat-label>E-mail</mat-label>
+                <input id="address" formControlName="address" matInput required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Tipo</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option *ngFor="let emailType of emailTypes"
+                        [value]="emailType.value">{{emailType.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Observação</mat-label>
+                <textarea formControlName="note" cdkTextareaAutosize matInput></textarea>
+            </mat-form-field>
+        </div>
+
+        <div class="actions">
+            <button *ngIf="address?.invalid; else buttonActive" mat-raised-button class="button" disabled="true"
+                color="primary">Confirmar</button>
+            <button mat-raised-button class="right-button" (click)="cancelClick()">Cancelar</button>
+        </div>
+
+    </form>
+    <ng-template #buttonActive>
+        <button disabled="false" mat-raised-button class="button" color="primary" (click)="confirmEmail()"
+            type="submit">Confirmar</button>
+    </ng-template>
+</div>

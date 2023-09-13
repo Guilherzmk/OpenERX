@@ -4,19 +4,19 @@ namespace OpenERX.Commons.Types.Addresses
 {
     public partial class Address
     {
-        public Guid Id { get; set; }
-        public string ParentType { get; set; }
-        public int TypeCode { get; set; }
-        public string TypeName { get; set; }
-        public string Prefix { get; set; }
-        public string Street { get; set; }
-        public string Number { get; set; }
-        public string Complement { get; set; }
-        public string District { get; set; }
-        public string City { get; set; }
+        public Guid? Id { get; set; }
+        public string? ParentType { get; set; }
+        public int? TypeCode { get; set; }
+        public string? TypeName { get; set; }
+        public string? Prefix { get; set; }
+        public string? Street { get; set; }
+        public string? Number { get; set; }
+        public string? Complement { get; set; }
+        public string? District { get; set; }
+        public string? City { get; set; }
  
         private string _state;
-        public string State
+        public string? State
         {
             get
             {
@@ -29,11 +29,11 @@ namespace OpenERX.Commons.Types.Addresses
         }
 
 
-        public string Country { get; set; }
-        public string ZipCode { get; set; }
+        public string? Country { get; set; }
+        public string? ZipCode { get; set; }
  
         public int? Index { get; set; }
-        public string Note { get; set; }
+        public string? Note { get; set; }
  
   
 

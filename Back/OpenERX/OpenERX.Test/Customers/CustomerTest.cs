@@ -18,7 +18,7 @@ namespace OpenERX.Test.Customers
                 Note = "xpto"
             };
 
-            var result = await customerService.CreateAsync(createParams, Guid.Parse("76BB72BB-16CA-4339-8204-C21C828AF779"));
+            //var result = await customerService.CreateAsync(createParams, Guid.Parse("76BB72BB-16CA-4339-8204-C21C828AF779"));
 
 
 

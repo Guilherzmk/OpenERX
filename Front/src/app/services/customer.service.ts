@@ -5,6 +5,7 @@ import { enviroments } from 'src/environments/environments';
 import { SignInComponent } from '../components/screens/sign-in/sign-in.component';
 import { SignInParams } from '../models/SignInParams';
 import { CustomerParams } from '../models/CustomerParams';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -23,6 +24,24 @@ export class CustomerService {
 
   getCustomers(): Observable<CustomerParams[]> {
     return this.http.get<CustomerParams[]>(this.apiUrl, {
+      headers: this.headers,
+    });
+  }
+
+  getCustomer(id: any): Observable<CustomerParams> {
+    return this.http.get<CustomerParams>(this.apiUrl + `/${id}`, {
+      headers: this.headers,
+    });
+  }
+
+  createCustomer(data: CustomerParams): Observable<CustomerParams> {
+    return this.http.post<CustomerParams>(this.apiUrl, data, {
+      headers: this.headers,
+    });
+  }
+
+  updateCustomer(data: CustomerParams, id: any): Observable<CustomerParams> {
+    return this.http.put<CustomerParams>(this.apiUrl + `/${id}`, data, {
       headers: this.headers,
     });
   }

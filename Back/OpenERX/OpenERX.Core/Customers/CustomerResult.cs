@@ -53,6 +53,7 @@ namespace OpenERX.Core.Customers
 
         public CustomerResult(Customer model )
         {
+            
             this.Id = model.Id;
             this.Code = model.Code;
             this.TypeCode = model.TypeCode;

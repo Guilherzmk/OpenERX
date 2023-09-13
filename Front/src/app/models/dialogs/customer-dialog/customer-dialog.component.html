@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Cliente</h1>
+
+    <form [formGroup]="customerForm">
+        <div class="form-field">
+            <mat-form-field>
+                <mat-label>Tipo de Pessoa</mat-label>
+                <mat-select formControlName="personType">
+                    <mat-option *ngFor="let personType of personTypes" [value]="personType.value">{{
+                        personType.viewValue
+                        }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>CPF/CNPJ</mat-label>
+                <input id="identity" formControlName="identity" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Nome</mat-label>
+                <input id="name" formControlName="name" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Apelido</mat-label>
+                <input id="nickname" formControlName="nickname" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Nascimento</mat-label>
+                <input id="birthDate" formControlName="birthDate" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Observação</mat-label>
+                <input id="note" formControlName="note" matInput>
+            </mat-form-field>
+            <div class="actions">
+                <button mat-raised-button class="button" color="primary" (click)="confirmCustomer()">Confirmar</button>
+                <button mat-raised-button class="right-button" (click)="cancelClick()">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>

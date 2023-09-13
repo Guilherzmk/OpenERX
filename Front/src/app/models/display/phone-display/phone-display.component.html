@@ -1,0 +1,46 @@
+<div class="phone-detail">
+    <div class="header">
+        <div class="app-title">
+            Telefones
+        </div>
+        <div class="button">
+            <button mat-icon-button [matMenuTriggerFor]="secondMenu">
+                <mat-icon class="item-icon">more_vert</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="phone" *ngFor="let phone of phones; let i = index" (click)="selectPhone(i)">
+        <div class="app-phone" [matMenuTriggerFor]="menu">
+            <div class="lateral-bar">
+                <p>|</p>
+            </div>
+            <div class="phone-data">
+                <div class="app-label">
+                    {{phoneType(i)}}
+                </div>
+                <div class="app-value">
+                    {{phone.number}}
+                </div>
+                <div class="app-note">
+                    {{phone.note}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<mat-menu #menu="matMenu" class="menu">
+    <button class="menuButton" (click)="openDialog()"> <mat-icon class="menuIcon">add</mat-icon> Adicionar
+        Telefone</button>
+    <div>
+        <button class="menuButton" (click)="openEditDialog()"> <mat-icon class="menuIcon">edit</mat-icon> Editar
+            Telefone</button>
+        <button class="menuButton" (click)="deletePhone()"> <mat-icon class="menuIcon">delete</mat-icon> Deletar
+            Telefone</button>
+    </div>
+</mat-menu>
+<mat-menu #secondMenu="matMenu" class="menu">
+    <button class="menuButton" (click)="openDialog()"> <mat-icon class="menuIcon">add</mat-icon> Adicionar
+        Telefone</button>
+    <button class="menuButton" (click)="deleteAllPhone()"> <mat-icon class="menuIcon">clear_all</mat-icon> Excluir
+        Todos</button>
+</mat-menu>

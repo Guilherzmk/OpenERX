@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.CookiePolicy;
+using OpenERX.Commons.Credentials;
 using OpenERX.Core.Users;
 using OpenERX.Repositories.Users;
 using OpenERX.WebAPI.Credentials;
@@ -40,6 +41,22 @@ namespace OpenERX.Services.Credentials
                 }
             }
             return null;
+        }
+
+        public async Task<Credential> CreateCredential()
+        {
+            var credential = new Credential();
+
+            var user = await GetContextUser();
+
+            credential.UserId = user.Id;
+            credential.UserName = user.Name;
+            credential.ProfileCode = user.ProfileId;
+            credential.BrokerName = "Guilherme";
+            credential.AccessKey = user.AccessKey;
+            credential.ApiKey = user.Token;
+
+            return credential;
         }
 
         public async Task<Guid> GetContextProfile()

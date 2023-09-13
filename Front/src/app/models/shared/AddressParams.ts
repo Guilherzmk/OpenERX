@@ -1,14 +1,14 @@
 export interface AddressParams {
-  typeCode: number;
-  typeName: string;
-  prefix: string;
-  street: string;
-  number: string;
-  complement: string;
-  district: string;
-  city: string;
-  state: string;
-  country: string;
-  zipCode: string;
-  note: string;
+  typeCode?: number | null;
+  typeName?: string | null;
+  prefix?: string | null;
+  street?: string | null;
+  number?: string | null;
+  complement?: string | null;
+  district?: string | null;
+  city?: string | null;
+  state?: string | null;
+  country?: string | null;
+  zipCode?: string | null;
+  note?: string | null;
 }

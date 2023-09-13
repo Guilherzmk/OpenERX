@@ -1,0 +1,42 @@
+<div class="container">
+    <h1>Telefone</h1>
+
+    <form [formGroup]="phoneForm">
+        <div class="form-field">
+            <mat-form-field>
+                <mat-label>Número</mat-label>
+                <input id="phoneNumber" mask="(00)00000-0000" [dropSpecialCharacters]="false" formControlName="number"
+                    matInput required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Tipo</mat-label>
+                <mat-select formControlName="phoneType">
+                    <mat-option *ngFor="let phoneType of phoneTypes" [value]="phoneType.value">{{
+                        phoneType.viewValue
+                        }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Observação</mat-label>
+                <textarea formControlName="note" cdkTextareaAutosize matInput></textarea>
+            </mat-form-field>
+        </div>
+
+        <div class="actions">
+            <button *ngIf="number?.invalid; else buttonActive" disabled="true" mat-raised-button class="button"
+                color="primary">
+                Confirmar
+            </button>
+            <button mat-raised-button class="right-button" (click)="cancelClick()">
+                Cancelar
+            </button>
+        </div>
+
+    </form>
+    <ng-template #buttonActive>
+        <button disabled="false" mat-raised-button class="button" color="primary" (click)="confirmPhone()"
+            type="submit">
+            Confirmar
+        </button>
+    </ng-template>
+</div>

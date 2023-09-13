@@ -1,0 +1,20 @@
+<div class="phone-input">
+
+    <!-- (ngModelChange)="passData()" -->
+    <ng-container *ngFor="let phoneInput of phoneInputs; let i = index ">
+        <mat-form-field>
+            <mat-label>Telefone</mat-label>
+            <input [name]="'phone'+ i.toString()" [(ngModel)]="phoneInput.number" [dropSpecialCharacters]="false"
+                matInput mask="(00)00000-0000" (change)="passData()" />
+            <button [matMenuTriggerFor]="menu" matSuffix mat-icon-button>
+                <mat-icon class="item-icon">more_vert</mat-icon>
+            </button>
+
+        </mat-form-field>
+    </ng-container>
+    <mat-menu #menu="matMenu" class="menu">
+        <button class="menuButton" (click)="openDialog()"> <mat-icon class="menuIcon">add</mat-icon> Adicionar
+            Telefone</button>
+    </mat-menu>
+
+</div>
